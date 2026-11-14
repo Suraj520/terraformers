@@ -119,7 +119,7 @@ function App(){
  const selectedChapter:AppChapter=showChapter7?'mars-ready':state.chapter;
  const chapter=chapters.find(c=>c.id===selectedChapter)!;
  return <div className="app-shell"><style>{`
-/* Seven-colour rainbow typography across the Mars Swarm interface. */
+/* Seven-colour rainbow typography across the Terraformers interface. */
 .app-shell :is(h1,h2,h3,h4,h5,h6,p,span,b,strong,small,label,li,a,button,th,td,dt,dd,legend,summary,figcaption,.eyebrow,.subtle-label,.side-label,.rail-title,.version,.brand-name,.brand-sub,.chapter-copy,.resource-count,.resource-available,.hero-kicker,.log-title,.log-line,.metric-row,.facility-cost,.arrival-step,.network-heading,.mission-log,.toast,.modal-head) {
   background-image: linear-gradient(90deg, #ff0000 0%, #ff7a00 16.66%, #ffe600 33.33%, #20c85a 50%, #168cff 66.66%, #5632c9 83.33%, #a900c8 100%);
   background-size: 300% 100%;
@@ -188,7 +188,7 @@ function LearningHub({mode,onClose}:{mode:LearningPanelMode;onClose:()=>void}){
  <section className="teacher-panel" style={{marginBottom:22,padding:24,background:'linear-gradient(135deg,rgba(18,43,57,.98),rgba(13,25,37,.98))',border:'1px solid rgba(93,190,207,.28)',borderRadius:16}}>
   <span className="mini-eyebrow">THE CULTURAL INSPIRATION BEHIND THE MISSION</span>
   <h3 style={{margin:'8px 0 10px',fontSize:25,color:'#f1f7f7'}}>RAHU + KETU: TWO HALVES, ONE JOURNEY</h3>
-  <p style={{maxWidth:980,lineHeight:1.7,color:'#c5d4d7',margin:'0 0 18px'}}>Mars Swarm borrows the names Rahu and Ketu from Hindu mythology and Jyotisha (traditional Indian astrology). In the project story, two separately delivered robot modules must find one another and reunite on Mars—an imaginative engineering parallel to the myth of Rahu and Ketu’s separation.</p>
+  <p style={{maxWidth:980,lineHeight:1.7,color:'#c5d4d7',margin:'0 0 18px'}}>Terraformers borrows the names Rahu and Ketu from Hindu mythology and Jyotisha (traditional Indian astrology). In the project story, two separately delivered robot modules must find one another and reunite on Mars—an imaginative engineering parallel to the myth of Rahu and Ketu’s separation.</p>
   <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(230px,1fr))',gap:14,marginBottom:18}}>
    <article style={{padding:16,borderRadius:12,background:'rgba(5,17,27,.62)',border:'1px solid rgba(255,255,255,.08)'}}>
     <div style={{fontSize:12,letterSpacing:'.12em',color:'#69d7d0',fontWeight:800}}>RAHU · THE HEAD</div>
@@ -254,7 +254,7 @@ function MarsReadyChapter({onBack}:{onBack:()=>void}){
    </div>
   </section>
   <section style={{marginTop:22,padding:16,borderRadius:14,background:'#0b1722',border:'1px solid rgba(91,190,207,.28)'}}>
-   <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12,flexWrap:'wrap',marginBottom:12}}><div><span className="eyebrow">THE CHAPTER 07 FILM</span><h3 style={{margin:'5px 0 0',color:'#edf5f5'}}>A welcome from the Mars Swarm</h3></div><span style={{fontSize:11,color:'#8fb5bb'}}>MARS · THE FUTURE OUTPOST</span></div>
+   <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12,flexWrap:'wrap',marginBottom:12}}><div><span className="eyebrow">THE CHAPTER 07 FILM</span><h3 style={{margin:'5px 0 0',color:'#edf5f5'}}>A welcome from the Terraformers</h3></div><span style={{fontSize:11,color:'#8fb5bb'}}>MARS · THE FUTURE OUTPOST</span></div>
    {videoFailed?<div style={{padding:24,borderRadius:10,background:'#142430',color:'#c5d3d8',textAlign:'center'}}><b>The Chapter 7 film could not be loaded.</b><p style={{fontSize:12,margin:'8px 0'}}>Confirm that this file exists in your Vite public folder: <code>public{videoPath}</code></p></div>:<video key={videoPath} controls autoPlay playsInline preload="auto" onError={()=>setVideoFailed(true)} style={{display:'block',width:'100%',maxHeight:'68vh',objectFit:'contain',background:'#03080e',borderRadius:10}} aria-label="Mars is ready for Humans cinematic animation"><source src={videoPath} type="video/mp4"/>Your browser does not support HTML video.</video>}
    <p style={{margin:'10px 0 0',fontSize:12,color:'#91a7ad'}}>The film plays the completed Chapter 7 scene: the powered outpost, expanding robot colony, agriculture, rain, rainbow and the welcome billboard.</p>
   </section>
@@ -436,13 +436,13 @@ function Report({state,act}:{state:MissionState;act:(a:Action)=>void}){
   <div className="report-checklist"><h3>Final readiness checklist</h3>{[['VAB integration test',state.robotTestPassed],['Launch 1 · Rahu delivery',state.launchesDelivered.includes(1)],['Launch 2 · Ketu delivery',state.launchesDelivered.includes(2)],['Mars robot assembly',state.modulesAssembled],['Launch 3 · Infrastructure delivery',state.launchesDelivered.includes(3)],['Solar array deployed',state.solarDeployed],['Charging station deployed',state.chargerDeployed],['Maintenance centre operational',state.maintenanceBuilt]].map(([name,done])=><div className="checklist-row" key={String(name)}><span className={done?'check-ok':'check-pending'}>{done?<Check size={13}/>:<span/>}</span>{name}<b>{done?'COMPLETE':'PENDING'}</b></div>)}</div>
   <section style={{marginTop:24,padding:20,borderRadius:14,background:'linear-gradient(135deg,rgba(20,48,62,.96),rgba(10,24,36,.96))',border:'1px solid rgba(91,190,207,.3)'}}>
    <div style={{display:'flex',alignItems:'flex-start',justifyContent:'space-between',gap:16,flexWrap:'wrap'}}>
-    <div style={{maxWidth:680}}><span className="eyebrow">CHAPTER 06 · COMPLETE MISSION RECAP</span><h3 style={{margin:'7px 0',color:'#edf5f5'}}>The Mars Swarm story so far</h3><p style={{margin:'0 0 12px',color:'#b9c9ce',lineHeight:1.6}}>Watch every generated animation from Chapters 1–5 in mission order: resource preparation, Rahu and Ketu module assembly, all three launches, Mars rendezvous, and outpost power and maintenance deployment.</p><div style={{fontSize:12,color:'#91a7ad'}}>17 clips · 5 chapters · Plays continuously in sequence</div></div>
+    <div style={{maxWidth:680}}><span className="eyebrow">CHAPTER 06 · COMPLETE MISSION RECAP</span><h3 style={{margin:'7px 0',color:'#edf5f5'}}>The Terraformers story so far</h3><p style={{margin:'0 0 12px',color:'#b9c9ce',lineHeight:1.6}}>Watch every generated animation from Chapters 1–5 in mission order: resource preparation, Rahu and Ketu module assembly, all three launches, Mars rendezvous, and outpost power and maintenance deployment.</p><div style={{fontSize:12,color:'#91a7ad'}}>17 clips · 5 chapters · Plays continuously in sequence</div></div>
     <button type="button" className="btn-primary" onClick={startFilm}><Play size={16}/> Play complete mission film</button>
    </div>
    <div style={{display:'flex',gap:7,flexWrap:'wrap',marginTop:18}}>{['01 · Resources (8 clips)','02 · Robot assembly (2)','03 · Launches (3)','04 · Mars arrival (1)','05 · Outpost (3)'].map(label=><span key={label} style={{padding:'7px 10px',borderRadius:20,background:'rgba(103,214,193,.1)',border:'1px solid rgba(103,214,193,.2)',fontSize:11,color:'#b9dcd5'}}>{label}</span>)}</div>
   </section>
   <div className="action-footer"><div><b>Ready for another mission?</b><span>Start over with the same deterministic resource budget.</span></div><button className="btn-primary" onClick={()=>act({type:'RESET'})}><RotateCcw size={15}/> Replay mission</button></div>
-  {filmIndex!==null&&currentClip&&<div role="dialog" aria-modal="true" aria-label="Complete Mars Swarm mission film" onClick={closeFilm} style={{position:'fixed',inset:0,zIndex:1100,background:'rgba(2,8,14,.94)',display:'flex',alignItems:'center',justifyContent:'center',padding:20,overflowY:'auto'}}>
+  {filmIndex!==null&&currentClip&&<div role="dialog" aria-modal="true" aria-label="Complete Terraformers mission film" onClick={closeFilm} style={{position:'fixed',inset:0,zIndex:1100,background:'rgba(2,8,14,.94)',display:'flex',alignItems:'center',justifyContent:'center',padding:20,overflowY:'auto'}}>
    <section onClick={e=>e.stopPropagation()} style={{width:'min(100%,1150px)',background:'#101d27',border:'1px solid rgba(91,190,207,.35)',borderRadius:16,padding:18,boxShadow:'0 24px 80px rgba(0,0,0,.55)'}}>
     <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:12,marginBottom:14}}><div><span className="eyebrow">{currentClip.chapter}</span><h3 style={{margin:'5px 0 0',color:'#edf5f5'}}>{currentClip.title}</h3><p style={{margin:'5px 0 0',fontSize:12,color:'#91a7ad'}}>Clip {filmIndex+1} of {missionFilmClips.length} · Next clip starts automatically</p></div><button type="button" className="icon-btn" aria-label="Close complete mission film" onClick={closeFilm}><X size={20}/></button></div>
     <div style={{height:5,background:'#263a45',borderRadius:5,overflow:'hidden',marginBottom:14}}><div style={{height:'100%',width:`${((filmIndex+1)/missionFilmClips.length)*100}%`,background:'linear-gradient(90deg,#20c85a,#168cff,#a900c8)',transition:'width .25s'}}/></div>
@@ -455,7 +455,7 @@ function Report({state,act}:{state:MissionState;act:(a:Action)=>void}){
 }
 
 const nasaResourceGroups = [
- {title:'NASA DATA & RESOURCES',intro:'Public science datasets and tools that can help ground Mars Swarm learning activities in real space research.',items:[
+ {title:'NASA DATA & RESOURCES',intro:'Public science datasets and tools that can help ground Terraformers learning activities in real space research.',items:[
   {name:'NASA Open APIs',tag:'API PORTAL',description:'NASA’s central public API portal. Explore programmatic datasets such as Astronomy Picture of the Day (APOD), Mars Rover Photos and the Space Weather Database (DONKI). A free API key can be requested for higher rate limits than the shared demo key.',url:'https://api.nasa.gov/',link:'Explore APIs'},
   {name:'Space Weather Database (DONKI)',tag:'SPACE WEATHER',description:'Regularly updated notifications and data on solar flares, coronal mass ejections and other space-weather events. Useful for investigating radiation risk, communications disruption and mission-risk scenarios for astronauts and spacecraft.',url:'https://ccmc.gsfc.nasa.gov/tools/DONKI/',link:'Open DONKI'},
   {name:'NASA Open Science Data Repository (OSDR)',tag:'SPACE BIOLOGY',description:'NASA’s public archive of space-biology and astronaut-health research, including studies of spaceflight effects on bone density, muscle mass, immune response and sleep across organisms. Search the repository by keyword.',url:'https://osdr.nasa.gov/bio/repo/',link:'Browse OSDR',extraUrl:'https://osdr.nasa.gov/osdr/data/search?term=KEYWORD',extraLink:'Open search API'},
@@ -475,7 +475,7 @@ function NASAResources({onClose}:{onClose:()=>void}){
     <button type="button" className="icon-btn" aria-label="Close resources" onClick={onClose}><X size={20}/></button>
    </header>
    <div style={{padding:24}}>
-    <div style={{padding:'12px 14px',marginBottom:22,borderRadius:9,background:'rgba(255,255,255,.045)',border:'1px solid rgba(255,255,255,.09)',color:'#c4d1d5',fontSize:12,lineHeight:1.65}}>These are external research and learning links. They are not live data feeds inside the Mars Swarm simulation; check each provider’s documentation and data-use terms before using its data.</div>
+    <div style={{padding:'12px 14px',marginBottom:22,borderRadius:9,background:'rgba(255,255,255,.045)',border:'1px solid rgba(255,255,255,.09)',color:'#c4d1d5',fontSize:12,lineHeight:1.65}}>These are external research and learning links. They are not live data feeds inside the Terraformers simulation; check each provider’s documentation and data-use terms before using its data.</div>
     {nasaResourceGroups.map(group=><section key={group.title} style={{marginBottom:24}}>
      <div style={{marginBottom:12}}><span className="eyebrow">{group.title}</span><p style={{margin:'5px 0 0',color:'#aebfc5',fontSize:13}}>{group.intro}</p></div>
      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(min(100%,300px),1fr))',gap:12}}>
