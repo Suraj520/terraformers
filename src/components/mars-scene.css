@@ -1,0 +1,5 @@
+.mars-visualizer { display: flex; flex-direction: column; gap: 0.75rem; }
+.mars-visualizer__header { display: flex; justify-content: space-between; align-items: center; }
+.mars-visualizer__hint { font-size: 0.8rem; opacity: 0.7; }
+.mars-visualizer__viewport { position: relative; width: 100%; min-height: 420px; }
+.mars-visualizer__viewport .mars-visualizer__hint { position: absolute; left: 0.75rem; bottom: 0.75rem; pointer-events: none; }

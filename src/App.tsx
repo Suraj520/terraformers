@@ -296,7 +296,7 @@ function Launch({state,act}:{state:MissionState;act:(a:Action)=>void}){
   setVideoFailed(false);
   setActiveLaunch(number);
  };
- const executeLaunch=(number:number)=>{
+ const executeLaunch=(number:1|2|3)=>{
   // Deliver the payload once, then immediately show its matching launch video.
   act({type:'LAUNCH',number});
   openLaunchAnimation(number);
