@@ -23,115 +23,75 @@ npm run dev
 
 Open the local URL printed by Vite (normally `http://localhost:5173`).
 
-## Future Implementations for Community via the Baseline
+# Future Scope and Planned Implementations
 
-### Student experience
+I intend to expand Mars Swarm beyond its current educational simulation into a more comprehensive, accessible and collaborative STEM learning platform. The following features represent my proposed development roadmap, which I wish to implement progressively using the existing project as a baseline.
 
-- The original seven-chapter Mars Swarm campaign can be retained: Resource Yard, VAB Robotics Lab, Launch Design, Mars Arrival, Power & Maintenance and Mission Report.
-- **Interactive 3D planetary scene:** a custom WebGL 1 renderer draws a lit sphere, terrain and a modular rover from generated geometry. Learners can drag to orbit the camera, zoom, drive the rover across the local grid and deploy/pack a habitat. No remote 3D assets or runtime 3D library are required. If WebGL is unavailable, the scene displays a clear fallback message.
-- **Five destinations:** Moon, Mars, Earth, Venus and Jupiter, with gravity facts. Jupiter is identified as a gas giant without a solid surface to land on.
-- **Physics playground:** rocket thrust versus weight, rover uphill force, momentum, solar collection and demand, an orbital-speed *index*, insulation/heat transfer and a structural support/load model.
-- **Age-banded prompts:** learners can switch between 9–11, 12–13 and 14–15 explanations/challenges. The age band also appears on the teacher's assignment preview.
-- **Accessible interaction basics:** range controls, visible labels, keyboard-operable buttons, touch-friendly pointer camera control and reduced-motion CSS handling.
+## 1. Expanded Student Experience
 
-### Teacher command centre
+I plan to retain the original seven-chapter Mars Swarm campaign while introducing additional interactive learning capabilities.
 
-- Demo class KPIs calculated from the included fictional sample learners.
-- Learner progress, concept focus and support filtering.
-- Concept-level class indicators, assignment prompt selection/copy, presentation styling and CSV export.
-- All learner names and values are fictional and hard-coded demo data. No actual class roster is imported or persisted.
+- **Interactive 3D planetary exploration:** I want to develop a richer 3D environment where students can explore planetary surfaces, orbit the camera, drive rovers, deploy habitats and interact with simulated infrastructure. I also intend to provide a fallback experience for devices that do not support WebGL.
+- **Five planetary destinations:** I plan to expand exploration to the Moon, Mars, Earth, Venus and Jupiter, incorporating planetary characteristics and gravity comparisons. Jupiter will be represented accurately as a gas giant without a solid surface for landing.
+- **Advanced physics playground:** I intend to introduce interactive experiments covering rocket thrust, gravity, rover movement, momentum, solar energy, heat transfer, insulation, orbital concepts and structural loads.
+- **Age-adaptive learning:** I want to provide different explanations, challenges and learning pathways for students aged 9–11, 12–13 and 14–15.
+- **Accessibility:** I plan to improve keyboard navigation, touch controls, visible labels, reduced-motion support and usability across different screen sizes.
 
-### Automated tests
+## 2. Teacher Command Centre
 
-```bash
-npm test
-```
+I envision a dedicated teacher dashboard that will eventually allow educators to:
 
-The Node built-in test suite covers the pure physics models, chapter unlocking, mission progress and teacher summary calculations. No third-party test runner is required.
+- Monitor student progress and mission completion.
+- Identify concepts where learners may need additional support.
+- Create and distribute mission assignments.
+- Review learning evidence and class-level progress.
+- Present lessons using a classroom-friendly presentation mode.
+- Export learning reports in CSV format.
 
-## Model accuracy and safety boundaries
+I also intend to replace the current fictional demonstration data with a properly authenticated, school-managed student data system.
 
-This can be a **conceptual learning game**, not a validated engineering simulator. The models deliberately simplify real systems:
+## 3. Automated Testing and Reliability
 
-- Rocket lift uses a basic thrust-minus-weight calculation. It omits atmosphere, changing mass, engine curves, aerodynamic forces, guidance, structural loads and staging.
-- Rover climbing uses a simplified component of gravitational force along a slope and ignores wheel-ground traction, suspension, rolling resistance and terrain deformation.
-- Momentum uses mass × velocity as a classroom relationship; it does not simulate collision dynamics or braking systems.
-- The orbit experiment is a dimensionless speed-band teaching index, **not orbital mechanics** and not a trajectory predictor.
-- Solar energy uses illustrative game units. Heat transfer is a one-step teaching model. Structural capacity is a made-up per-support score.
-- All launch campaign performance values and Mars mission details remain fictional game units. Nothing here is flight-ready or suitable for real-world design, navigation, landing or safety decisions.
+I plan to expand automated testing to cover physics calculations, mission progression, learning outcomes, teacher dashboard functionality and application reliability. My goal is to establish a repeatable testing process that helps ensure new features do not break existing functionality.
 
-The 3D renderer is a real WebGL scene, but the rover, ground and planetary surfaces are visual teaching models, not high-fidelity terrain, robot kinematics or physical collision simulations.
+## 4. More Advanced 3D and Physics Simulation
 
-## Architecture
+I intend to develop the visual and simulation engine further using Three.js and cannon-es. Planned improvements include:
 
-- `src/App.tsx` — campaign UI, student learning hub and teacher demo dashboard.
-- `src/learning/PlanetScene.tsx` — custom WebGL renderer, generated meshes, camera controls and fallback.
-- `src/learning/physics-core.mjs` + `physics-core.d.mts` — pure, documented conceptual physics functions and TypeScript declarations.
-- `src/learning/mission-rules.mjs` + `mission-rules.d.mts` — pure mission progression and teacher summary calculations.
-- `src/platform-contracts.ts` — future API data contracts and authorization boundary; it is not a live backend.
-- `docs/production-schema.sql` and `docs/API-CONTRACT.md` — proposed data model and server authorization contract; neither is deployed by this front-end demo.
-- `src/engine/types.ts`, `initialState.ts`, `reducer.ts` — typed mission state, deterministic starting state and centralized mission transitions.
-- `tests/` — Node built-in tests for physics and progression.
+- More detailed planetary environments, terrain and rover models.
+- Improved rover movement, suspension and interaction with uneven terrain.
+- More realistic habitat assembly and deployment animations.
+- Interactive solar arrays, charging stations and robotic infrastructure.
+- Adaptive graphics quality for different hardware capabilities.
+- Improved planetary environments and mission-specific visual effects.
 
-## Production architecture recommendation
+These improvements will progressively move the experience beyond simplified educational demonstrations while maintaining clear distinctions between conceptual physics models and scientifically validated engineering simulations.
 
-The browser app is still a front-end prototype. The following contracts and boundaries are provided as a starting point, not a claim that production identity or cloud services exist.
+## 5. Collaborative Learning and Production Infrastructure
 
-1. **Identity and roles:** use a school-approved identity provider or teacher-managed invite flow. Server-verified roles should be `student`, `teacher` and `school_admin`. Never trust a role, school ID or class ID supplied by the browser.
-2. **Tenant isolation:** every server query and mutation must enforce school and class membership. Teachers may only access classes assigned to them; students may only access their own progress and published class assignments.
-3. **Suggested data entities:** `School`, `Teacher`, `Class`, `Learner`, `ClassMembership`, `MissionDefinition`, `MissionAssignment`, `LearnerMissionAttempt`, `ConceptEvidence`, `TeacherNote` and `AuditEvent`. Use opaque IDs; avoid collecting full birth dates, home addresses or unnecessary profile details.
-4. **Persistence:** keep the current `localStorage` save as an offline/demo mode only. A production deployment should use an authenticated API, encrypted transport, encrypted database/storage, backups, retention/deletion controls and audited exports.
-5. **Privacy for minors:** collect the minimum data needed; use school-controlled identifiers or pseudonyms; define school/guardian notice and consent workflows with local legal review; provide deletion/export processes; set short retention periods; do not add advertising, behavioural profiling or third-party trackers.
-6. **Security:** add server-side authorization on every endpoint, rate limits, input validation, CSRF protections where cookie sessions are used, secure session handling, secrets management, dependency scanning and incident response procedures.
-7. **Learning data:** treat mastery as evidence from completed activities, not a permanent label about a child. Show teachers the evidence and uncertainty behind a support flag; allow review and correction.
+A major long-term objective is to make Mars Swarm useful to schools and learning communities.
 
-## Build and deployment
+I intend to develop:
+- Secure student, teacher and school administrator accounts.
+- School and classroom management.
+- Persistent student progress and assignment records.
+- Teacher-controlled mission assignments and learning reports.
+- Secure cloud-based data storage and synchronization.
+- Role-based access, privacy controls and appropriate safeguards for minors.
 
-```bash
-npm run build
-npm run preview
-```
+I plan to use server-side authentication and authorization, tenant isolation, secure APIs and appropriate data-retention policies before introducing real student information.
 
-Host the generated `dist/` directory on a static host with HTTPS. For a school deployment, use a managed domain and an approved data-processing arrangement before collecting any learner information.
+## 6. Scientific Learning and External Resources
 
-## Verification status and known gaps
+I also wish to expand the integration of educational resources and planetary science information, including NASA datasets, Mars exploration resources and archived weather observations. Future development may include more interactive data visualizations and educational explanations of real planetary conditions.
 
-- `npm test` has been run successfully in this workspace.
-- Dependency installation was attempted but timed out in the execution environment. Therefore the Vite production build and full React/TypeScript type-check have **not** been verified here. Run `npm install` and `npm run build` in a network-enabled development environment before deploying.
-- The teacher dashboard is a static demo. There is no real authentication, authorization, database, class roster, assignment publishing, student account system, teacher notes or cloud sync.
-- The current WebGL scene has a small hand-built mesh set and a basic camera. It does not yet include GLTF assets, real rover controls, physics-driven collisions, detailed planets, a 2D scene fallback, device capability profiling or GPU-performance telemetry.
-- There is no formal child usability study, accessibility audit, localization, safeguarding review or school/legal privacy review yet.
+## 7. Scientific Accuracy, Safety and Educational Integrity
 
-## Recommended next milestones
+Throughout development, I intend to distinguish between real scientific principles, simplified educational models and fictional mission scenarios. The project is designed as a conceptual learning environment, not a flight-ready engineering simulator. I will continue improving the scientific accuracy of its educational content while ensuring that students understand the limitations of the simulations.
 
-1. Run dependency installation, production build and browser smoke tests; add CI on every change.
-2. Add a proper WebGL scene graph and asset pipeline, adaptive quality settings, and an equivalent 2D accessible scene.
-3. Add richer interactive construction, rover path planning, habitat assembly and mission event feedback.
-4. Validate learning objectives and age-banded language with educators and supervised child usability sessions.
-5. Implement the school-managed backend, authentication, role-based authorization, auditability, consent and data lifecycle controls before any real student data is entered.
+## Long-Term Vision
 
-## Visual simulation engine (0.3.0)
+My ultimate ambition is to transform Mars Swarm into an open-ended, collaborative STEM learning environment where students can experiment with robotics, planetary exploration, renewable energy, autonomous construction and the engineering challenges of establishing human settlements beyond Earth.
 
-The planetary explorer now uses **Three.js** for real-time WebGL rendering and **cannon-es** for a small rigid-body physics sandbox. The scene is generated procedurally in code, so no external 3D model or texture downloads are required.
+I see the current project as the foundation for this larger vision. I intend to implement these capabilities incrementally, learn from educators and students, and build a platform that makes ambitious space exploration concepts understandable, interactive and inspiring for the next generation.
 
-### 3D scene features
-
-- Lit planetary sky, distant planetary disc and halo, star field, atmospheric fog, procedural rolling terrain, dunes, rocks and drifting dust particles.
-- A detailed modular rover with chassis, six wheels, sensor mast, camera eye and fold-out solar wings.
-- Animated habitat deployment with windows, dome and solar panel.
-- Drag-to-orbit camera, zoom, rover follow camera, keyboard and touch drive controls, and live speed/battery/distance HUD.
-- Five selectable planetary environments with different palettes and gravity values.
-
-### Physics implementation
-
-`src/learning/PlanetScene.tsx` uses cannon-es for a dynamic rover chassis, gravity, contact material, friction, damping, applied motor force, steering torque and fixed-step world integration. The wheels are animated visual parts rather than a full suspension/hinge drivetrain. The terrain collision plane is intentionally simplified and does not reproduce the procedural visual terrain height map. Telemetry distance and battery are game estimates, not calibrated physical measurements.
-
-### Dependencies
-
-- `three` — WebGL scene graph, meshes, lights, materials, camera and renderer.
-- `cannon-es` — rigid-body world and rover motion.
-- `@types/three` — TypeScript declarations.
-
-Install in a network-enabled environment with `npm install`, then run `npm run dev`. For a classroom demo, use a modern browser with WebGL hardware acceleration. The scene caps device pixel ratio to reduce GPU load. If the school's devices are older, reduce the star and dust counts or renderer pixel ratio.
-
-**Important:** The 3D scene is an educational arcade model. It is not a scientifically validated planetary rover dynamics simulator. The local gravity values are shown for learning, but the game chassis is not tuned as a real rover design.
