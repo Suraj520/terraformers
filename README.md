@@ -1,4 +1,14 @@
-# Mars Swarm — Junior Astronaut Builder
+# Terraformers  — Project Details
+
+Motivated by Transformers and their famous slogan - Autobots Re-unite by Optimus Prime.
+
+Google Drive Link of BluePrint - https://drive.google.com/drive/folders/1-ESAb_DRuL0XJXbfHcwrXe-pG2FGNoCs?usp=sharing
+
+Terraformers  is an interactive 3D educational simulation that demonstrates how autonomous, self-assembling swarm robots could prepare the infrastructure required for a future human settlement on Mars.
+How it works: Players progress through seven mission chapters, starting with resource collection and robotic component assembly, followed by launch preparation, Mars arrival, autonomous deployment, solar power generation, charging infrastructure, maintenance, and the final vision of a human-ready Mars colony. Interactive challenges, 3D environments, animated sequences, physics simulations, and mission reports make the experience engaging and educational.
+Benefits and intended impact: The project introduces students aged 9–15 to robotics, aerospace engineering, physics, renewable energy, resource management, and planetary science. Its intended impact is to inspire young learners to explore STEM fields and think creatively about sustainable space exploration.
+Technology used: The application was developed using React, TypeScript, Vite, Three.js, and JavaScript. Blender was used to create 3D models and mission animations. Additional technologies include HTML, CSS, physics simulation tools, and NASA's educational resources and archived Mars weather data. The project is currently a software simulation rather than a deployed physical robot system.
+Creativity and design considerations: Its creative approach combines swarm robotics, modular construction, autonomous systems, and storytelling into a playable Mars-colonization experience. Key considerations included scientific plausibility, educational accessibility, mission sequencing, environmental constraints, resource efficiency, renewable power, user engagement, and the technical feasibility of the simulation.
 
 A browser-based, classroom-oriented space exploration game for learners aged 9–15. The app combines the original Mars Swarm mission campaign with a real-time WebGL planetary scene, conceptual physics experiments and a teacher-facing demo dashboard.
 
