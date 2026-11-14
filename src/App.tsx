@@ -7,7 +7,7 @@ import PlanetScene from './learning/PlanetScene';
 import { heatModel, orbitModel, roverModel, rocketModel, solarModel, structureModel, momentumModel } from './learning/physics-core.mjs';
 import { calculateMissionProgress, getUnlockedChapters } from './learning/mission-rules.mjs';
 
-const SAVE_KEY='mars-swarm-save-v1';
+const SAVE_KEY='terraformers-save-v1';
 type AppChapter = Chapter | 'mars-ready';
 const chapters:{id:AppChapter;name:string;sub:string;icon:any}[]=[
  {id:'resource-yard',name:'Resource Yard',sub:'Plan your inventory',icon:Package},
