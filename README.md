@@ -27,7 +27,7 @@ Open the local URL printed by Vite (normally `http://localhost:5173`).
 
 ### Student experience
 
-- The original six-chapter Mars Swarm campaign is retained: Resource Yard, VAB Robotics Lab, Launch Design, Mars Arrival, Power & Maintenance and Mission Report.
+- The original seven-chapter Mars Swarm campaign can be retained: Resource Yard, VAB Robotics Lab, Launch Design, Mars Arrival, Power & Maintenance and Mission Report.
 - **Interactive 3D planetary scene:** a custom WebGL 1 renderer draws a lit sphere, terrain and a modular rover from generated geometry. Learners can drag to orbit the camera, zoom, drive the rover across the local grid and deploy/pack a habitat. No remote 3D assets or runtime 3D library are required. If WebGL is unavailable, the scene displays a clear fallback message.
 - **Five destinations:** Moon, Mars, Earth, Venus and Jupiter, with gravity facts. Jupiter is identified as a gas giant without a solid surface to land on.
 - **Physics playground:** rocket thrust versus weight, rover uphill force, momentum, solar collection and demand, an orbital-speed *index*, insulation/heat transfer and a structural support/load model.
@@ -51,7 +51,7 @@ The Node built-in test suite covers the pure physics models, chapter unlocking, 
 
 ## Model accuracy and safety boundaries
 
-This is a **conceptual learning game**, not a validated engineering simulator. The models deliberately simplify real systems:
+This can be a **conceptual learning game**, not a validated engineering simulator. The models deliberately simplify real systems:
 
 - Rocket lift uses a basic thrust-minus-weight calculation. It omits atmosphere, changing mass, engine curves, aerodynamic forces, guidance, structural loads and staging.
 - Rover climbing uses a simplified component of gravitational force along a slope and ignores wheel-ground traction, suspension, rolling resistance and terrain deformation.
