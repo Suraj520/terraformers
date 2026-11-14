@@ -23,7 +23,7 @@ npm run dev
 
 Open the local URL printed by Vite (normally `http://localhost:5173`).
 
-## What is implemented
+## Future Implementations for Community via the Baseline
 
 ### Student experience
 
