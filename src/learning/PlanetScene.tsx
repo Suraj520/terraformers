@@ -135,7 +135,7 @@ export default function PlanetScene({ planet, onMove }: Props) {
     }
 
     // Habitat prop with glowing windows and animated deployment.
-    const habitat = new THREE.Group(); habitat.position.set(3.5, 0, -1.2); scene.add(habitat); habitat.scale.setScalar(0.001); habitatRef.current = habitat;
+    const habitat = new THREE.Group(); habitat.position.set(3.5, 0, -1.2); scene.add(habitat); habitat.scale.setScalar(0.001);
     const habBody = new THREE.Mesh(new THREE.CylinderGeometry(0.85, 0.85, 1.45, 32), new THREE.MeshStandardMaterial({ color: 0xd8e3df, metalness: 0.3, roughness: 0.45 })); habBody.rotation.z = Math.PI / 2; habBody.position.y = 0.88; habBody.castShadow = true; habitat.add(habBody);
     const habDome = new THREE.Mesh(new THREE.SphereGeometry(0.84, 32, 20, 0, Math.PI * 2, 0, Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0x72c8d2, transparent: true, opacity: 0.85, roughness: 0.18, metalness: 0.2 })); habDome.position.set(0.78, 1.15, 0); habitat.add(habDome);
     for (let i = 0; i < 4; i++) { const win = new THREE.Mesh(new THREE.BoxGeometry(0.035, 0.28, 0.25), new THREE.MeshBasicMaterial({ color: 0xffdc8b })); win.position.set(-0.48 + i * 0.31, 0.95, 0.84); habitat.add(win); }
