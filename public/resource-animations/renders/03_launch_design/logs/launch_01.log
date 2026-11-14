@@ -1,11 +1,11 @@
 00:00.110  color_management | Using config from OCIO: "C:\Program Files\Blender Foundation\Blender 5.3\5.3\datafiles\colormanagement\config.ocio"
-[MARS SWARM] Worker launch_01 using 3 CPU threads
+[Terraformers] Worker launch_01 using 3 CPU threads
 C:\Work\spaceapps\junior-astronaut\v0.4\mars-swarm-3d-physics-demo\mars-swarm\blender-animation-generator\generate_launch_animations.py:88: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   mat.use_nodes = True
 C:\Work\spaceapps\junior-astronaut\v0.4\mars-swarm-3d-physics-demo\mars-swarm\blender-animation-generator\generate_launch_animations.py:447: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
   world.use_nodes = True
 
-[MARS SWARM] Rendering LAUNCH 01  /  RAHU UPPER BODY TO MARS to C:\Work\spaceapps\junior-astronaut\v0.4\mars-swarm-3d-physics-demo\mars-swarm\public\resource-animations\renders\03_launch_design\launch_01\frames
+[Terraformers] Rendering LAUNCH 01  /  RAHU UPPER BODY TO MARS to C:\Work\spaceapps\junior-astronaut\v0.4\mars-swarm-3d-physics-demo\mars-swarm\public\resource-animations\renders\03_launch_design\launch_01\frames
 00:54.969  render           | Saved: 'C:\Work\spaceapps\junior-astronaut\v0.4\mars-swarm-3d-physics-demo\mars-swarm\public\resource-animations\renders\03_launch_design\launch_01\frames\launch_0001.png'
 02:07.922  render           | Saved: 'C:\Work\spaceapps\junior-astronaut\v0.4\mars-swarm-3d-physics-demo\mars-swarm\public\resource-animations\renders\03_launch_design\launch_01\frames\launch_0002.png'
 02:47.188  render           | Saved: 'C:\Work\spaceapps\junior-astronaut\v0.4\mars-swarm-3d-physics-demo\mars-swarm\public\resource-animations\renders\03_launch_design\launch_01\frames\launch_0003.png'

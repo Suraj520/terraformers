@@ -16,7 +16,7 @@ Benefits and intended impact: The project introduces students aged 9–15 to rob
 Technology used: The application was developed using React, TypeScript, Vite, Three.js, and JavaScript. Blender was used to create 3D models and mission animations. Additional technologies include HTML, CSS, physics simulation tools, and NASA's educational resources and archived Mars weather data. The project is currently a software simulation rather than a deployed physical robot system.
 Creativity and design considerations: Its creative approach combines swarm robotics, modular construction, autonomous systems, and storytelling into a playable Mars-colonization experience. Key considerations included scientific plausibility, educational accessibility, mission sequencing, environmental constraints, resource efficiency, renewable power, user engagement, and the technical feasibility of the simulation.
 
-A browser-based, classroom-oriented space exploration game for learners aged 9–15. The app combines the original Mars Swarm mission campaign with a real-time WebGL planetary scene, conceptual physics experiments and a teacher-facing demo dashboard.
+A browser-based, classroom-oriented space exploration game for learners aged 9–15. The app combines the original Terraformers mission campaign with a real-time WebGL planetary scene, conceptual physics experiments and a teacher-facing demo dashboard.
 
 ## Run locally
 
@@ -31,11 +31,11 @@ Open the local URL printed by Vite (normally `http://localhost:5173`).
 
 # Future Scope and Planned Implementations
 
-I intend to expand Mars Swarm beyond its current educational simulation into a more comprehensive, accessible and collaborative STEM learning platform. The following features represent my proposed development roadmap, which I wish to implement progressively using the existing project as a baseline.
+I intend to expand Terraformers beyond its current educational simulation into a more comprehensive, accessible and collaborative STEM learning platform. The following features represent my proposed development roadmap, which I wish to implement progressively using the existing project as a baseline.
 
 ## 1. Expanded Student Experience
 
-I plan to retain the original seven-chapter Mars Swarm campaign while introducing additional interactive learning capabilities.
+I plan to retain the original seven-chapter Terraformers campaign while introducing additional interactive learning capabilities.
 
 - **Interactive 3D planetary exploration:** I want to develop a richer 3D environment where students can explore planetary surfaces, orbit the camera, drive rovers, deploy habitats and interact with simulated infrastructure. I also intend to provide a fallback experience for devices that do not support WebGL.
 - **Five planetary destinations:** I plan to expand exploration to the Moon, Mars, Earth, Venus and Jupiter, incorporating planetary characteristics and gravity comparisons. Jupiter will be represented accurately as a gas giant without a solid surface for landing.
@@ -75,7 +75,7 @@ These improvements will progressively move the experience beyond simplified educ
 
 ## 5. Collaborative Learning and Production Infrastructure
 
-A major long-term objective is to make Mars Swarm useful to schools and learning communities.
+A major long-term objective is to make Terraformers useful to schools and learning communities.
 
 I intend to develop:
 - Secure student, teacher and school administrator accounts.
@@ -97,7 +97,7 @@ Throughout development, I intend to distinguish between real scientific principl
 
 ## Long-Term Vision
 
-My ultimate ambition is to transform Mars Swarm into an open-ended, collaborative STEM learning environment where students can experiment with robotics, planetary exploration, renewable energy, autonomous construction and the engineering challenges of establishing human settlements beyond Earth.
+My ultimate ambition is to transform Terraformers into an open-ended, collaborative STEM learning environment where students can experiment with robotics, planetary exploration, renewable energy, autonomous construction and the engineering challenges of establishing human settlements beyond Earth.
 
 I see the current project as the foundation for this larger vision. I intend to implement these capabilities incrementally, learn from educators and students, and build a platform that makes ambitious space exploration concepts understandable, interactive and inspiring for the next generation.
 
