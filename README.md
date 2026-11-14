@@ -1,4 +1,8 @@
-# Terraformers  — Project Details
+<p align="center">
+  <img src="space-apps-logo.png" alt="Terraformers Logo" width="280">
+</p>
+
+<h1 align="center">Terraformers</h1>
 
 Motivated by Transformers and their famous slogan - Autobots Re-unite by Optimus Prime.
 
