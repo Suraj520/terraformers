@@ -9,7 +9,6 @@
 ## Demo
 
 [![Watch the Terraformers demo](https://img.youtube.com/vi/C6mv-IneAUM/hqdefault.jpg)](https://www.youtube.com/watch?v=C6mv-IneAUM&t=7s)
-``` <citation src="1,4"></citation>
 
 
 
