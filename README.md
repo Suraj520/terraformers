@@ -8,11 +8,16 @@
 
 ## Demo
 
-<video controls width="100%">
-  <source src="./NASA%20Space%20Apps%202026%20-%20Final%20Camera%20Ready%20Submission%20by%20Cosmic%20Trailblazer%20-%20Suraj_360p.mp4" type="video/mp4">
-  Your browser does not support embedded video. <a href="./NASA%20Space%20Apps%202026%20-%20Final%20Camera%20Ready%20Submission%20by%20Cosmic%20Trailblazer%20-%20Suraj_360p.mp4">Download the demo video</a>.
-</video>
-
+<iframe
+  width="100%"
+  height="480"
+  src="https://www.youtube.com/embed/C6mv-IneAUM?start=7"
+  title="Terraformers demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
 
 <h1 align="center">Terraformers</h1>
 
