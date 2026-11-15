@@ -8,16 +8,10 @@
 
 ## Demo
 
-<iframe
-  width="100%"
-  height="480"
-  src="https://www.youtube.com/embed/C6mv-IneAUM?start=7"
-  title="Terraformers demo"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen>
-</iframe>
+[![Watch the Terraformers demo](https://img.youtube.com/vi/C6mv-IneAUM/hqdefault.jpg)](https://www.youtube.com/watch?v=C6mv-IneAUM&t=7s)
+
+[Watch the demo on YouTube](https://www.youtube.com/watch?v=C6mv-IneAUM&t=7s)
+
 
 <h1 align="center">Terraformers</h1>
 
