@@ -2,6 +2,18 @@
   <img src="space-apps-logo.png" alt="Terraformers Logo" width="280">
 </p>
 
+<p align="center">
+  <img src="certificate_suraj520_2026__n_a_s_a__space__apps__challenge.jpeg" alt="Terraformers Logo" width="280">
+</p>
+
+## Demo
+
+<video controls width="100%">
+  <source src="./NASA%20Space%20Apps%202026%20-%20Final%20Camera%20Ready%20Submission%20by%20Cosmic%20Trailblazer%20-%20Suraj_360p.mp4" type="video/mp4">
+  Your browser does not support embedded video. <a href="./NASA%20Space%20Apps%202026%20-%20Final%20Camera%20Ready%20Submission%20by%20Cosmic%20Trailblazer%20-%20Suraj_360p.mp4">Download the demo video</a>.
+</video>
+
+
 <h1 align="center">Terraformers</h1>
 
 Demo - https://terraformers.netlify.app
